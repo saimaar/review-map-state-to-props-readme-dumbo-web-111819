@@ -18,6 +18,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props.users);
     // debugger;
     return (
       <div className="App">
@@ -28,14 +29,16 @@ class App extends Component {
             Click to change user count
           </button>
           <p>{this.props.items.length}</p>
+          <p>User: {this.props.users.length}</p>
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  debugger;
-  return { items: state.items }
+  // debugger;
+  return { items: state.items,
+          users: state.users}
 }
 
 export default connect(mapStateToProps)(App);
